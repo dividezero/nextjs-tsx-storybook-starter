@@ -3,6 +3,16 @@ import './Button.css';
 
 type Props = {
   text: string;
+  variant?: string;
+  disabled?: boolean;
 };
 
-export default ({ text }: Props) => <button>{text}</button>;
+export default ({ text, variant, disabled }: Props) => (
+  <button
+    className={`Button ${variant || ''}`}
+    type="button"
+    disabled={disabled}
+  >
+    {text}
+  </button>
+);
